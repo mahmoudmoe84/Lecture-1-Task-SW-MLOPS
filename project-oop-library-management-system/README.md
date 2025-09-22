@@ -183,5 +183,3 @@ Some ideas for making this better:
 This is a learning project to practice Python classes and functions. It's pretty basic but covers the main concepts of object-oriented programming that we're studying.
 
 ---
-
-*Built as a class project to learn OOP concepts in Python*
