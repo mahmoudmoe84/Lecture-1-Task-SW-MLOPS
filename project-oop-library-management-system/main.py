@@ -16,8 +16,8 @@ def main():
             try:
                 book_title = input('Enter Book Title:')
                 book_author = input('Author Name:')
-                num_copies = int(input('Enter num of Copies: '))
-                library.add_books(book_title=book_title, book_author=book_author, num_copies=num_copies)
+                num_copies_input = input('Enter num of Copies: ')
+                library.add_books(book_title=book_title, book_author=book_author, num_copies=num_copies_input)
             except ValueError as e:
                 print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()

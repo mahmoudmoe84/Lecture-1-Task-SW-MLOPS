@@ -17,7 +17,7 @@ class Library:
         if not value or not str(value).strip():
             raise ValueError(f"{name} cannot be empty")
         return str(value).strip()
-    
+
     def _validate_positive_number(self, value, name):
         """Validate that number is positive"""
         try:
