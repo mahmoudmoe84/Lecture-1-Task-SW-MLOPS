@@ -3,7 +3,7 @@ from classes_lib_system import Library
 from functions import continue_exit_return_to_main , print_selection_list
 
 def main():
-    library = Library()
+    library = Library()  # This will always return the same instance
     print_selection_list()
     while True:
         try:
@@ -13,13 +13,13 @@ def main():
             continue
         
         if choice ==1:
-            book_title = input('Enter Book Title:')
-            book_author = input('Author Name:')
             try:
+                book_title = input('Enter Book Title:')
+                book_author = input('Author Name:')
                 num_copies = int(input('Enter num of Copies: '))
-                library.add_books(book_title=book_title,book_author=book_author,num_copies=num_copies)
-            except ValueError:
-                print('Invalue number of copies')
+                library.add_books(book_title=book_title, book_author=book_author, num_copies=num_copies)
+            except ValueError as e:
+                print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()
             if user_choice =="exit":
                 break
@@ -27,8 +27,11 @@ def main():
                 print_selection_list()
     
         if choice ==2:
-            user_name = input("Enter User Name: ")
-            library.register_new_user(user_name=user_name)
+            try:
+                user_name = input("Enter User Name: ")
+                library.register_new_user(user_name=user_name)
+            except ValueError as e:
+                print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()
             if user_choice =="exit":
                 break
@@ -36,8 +39,11 @@ def main():
                 print_selection_list()
 
         if choice ==3:
-            book_name = input("Enter Book Name:")
-            library.find_book(book_title=book_name)
+            try:
+                book_name = input("Enter Book Name:")
+                library.find_book(book_title=book_name)
+            except ValueError as e:
+                print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()
             if user_choice =="exit":
                 break
@@ -46,20 +52,25 @@ def main():
           
 
         if choice ==4:
-            user_name = input('Enter User Name: ')
-            book_title = input("Enter Book Title: ")
-            library.borrow_book(book_title=book_title,user_name=user_name)
+            try:
+                user_name = input('Enter User Name: ')
+                book_title = input("Enter Book Title: ")
+                library.borrow_book(book_title=book_title, user_name=user_name)
+            except ValueError as e:
+                print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()
             if user_choice =="exit":
                 break
             elif user_choice =="continue":
                 print_selection_list()
 
-            
         if choice==5:
-            user_name = input('Enter User Name: ')
-            book_title = input("Enter Book Title: ")
-            library.return_book(book_title=book_title,user_name=user_name)
+            try:
+                user_name = input('Enter User Name: ')
+                book_title = input("Enter Book Title: ")
+                library.return_book(book_title=book_title, user_name=user_name)
+            except ValueError as e:
+                print(f'Error: {e}')
             user_choice = continue_exit_return_to_main()
             if user_choice =="exit":
                 break
